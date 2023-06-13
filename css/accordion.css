@@ -1,0 +1,71 @@
+div.accordiontab {
+  position: relative;
+  margin: 1em;
+}
+
+input.accordiontabinput {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+span.accordiontabspan {
+  background: #005100;
+  color: white;
+  padding: 1em;
+  position: relative;
+  display: block;
+ }
+
+label.accordionlabel::before {
+  content:"\25B6";
+  display: inline-block;
+  margin-right: 10px;
+  width: 28px;
+}
+
+label.accordionlabel {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  line-height: 25px;
+  font-weight: bold;
+}
+
+div.accordioncontentdiv-admin, div.accordioncontentdiv {
+  overflow: hidden;
+  transition:max-height 0.5s;
+  background-color: white;
+  box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.2);
+  transition: max-height 0.2s ease-out;
+}
+div.accordioncontentdiv-admin {
+  max-height: none;
+}
+
+div.accordioncontentdiv {
+  max-height: 0;
+}
+
+div.accordioncontentdiv p.accordioncontent, div.accordioncontentdiv-admin p.accordioncontent {
+  padding: 2em;
+}
+
+input.accordiontabinput:checked ~ span.accordiontabspan {
+  background: #004000;
+}
+
+input.accordiontabinput:checked ~ span.accordiontabspan label.accordionlabel::before {
+  content: "\25BC";
+  margin-right: 10px;
+}
+
+input.accordiontabinput:checked ~ span.accordiontabspan ~ div.accordioncontentdiv, input.accordiontabinput:checked ~ span.accordiontabspan ~ div.accordioncontentdiv-admin {
+  max-height: 100%;
+  overflow: auto;
+}
