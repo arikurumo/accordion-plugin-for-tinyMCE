@@ -79,7 +79,7 @@ tinymce.PluginManager.add('accordion', function(editor, url) {
     });
 
     // Open all tabs in the editor
-    editor.contentStyles.push("div.accordioncontentdiv { max-height: 100px !important; }");
+    editor.contentStyles.push("div.accordioncontentdiv { max-height: initial !important; }");
     
     return {
         getMetadata: function () {
